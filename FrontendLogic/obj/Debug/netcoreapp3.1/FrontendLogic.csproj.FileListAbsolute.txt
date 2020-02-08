@@ -1,0 +1,13 @@
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\bin\Debug\netcoreapp3.1\FrontendLogic.deps.json
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\bin\Debug\netcoreapp3.1\FrontendLogic.dll
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\bin\Debug\netcoreapp3.1\Repositories.dll
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\bin\Debug\netcoreapp3.1\Shared.dll
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\bin\Debug\netcoreapp3.1\Repositories.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\bin\Debug\netcoreapp3.1\Shared.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\obj\Debug\netcoreapp3.1\FrontendLogic.csprojAssemblyReference.cache
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\obj\Debug\netcoreapp3.1\FrontendLogic.AssemblyInfoInputs.cache
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\obj\Debug\netcoreapp3.1\FrontendLogic.AssemblyInfo.cs
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\obj\Debug\netcoreapp3.1\FrontendLogic.csproj.CopyComplete
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\bin\Debug\netcoreapp3.1\FrontendLogic.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\obj\Debug\netcoreapp3.1\FrontendLogic.dll
+C:\Users\oskar\source\repos\DelfiFeeds\FrontendLogic\obj\Debug\netcoreapp3.1\FrontendLogic.pdb

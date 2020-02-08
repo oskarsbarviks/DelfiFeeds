@@ -6,24 +6,37 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DelfiFeeds.Models;
+using Microsoft.AspNetCore.Authorization;
+using FrontendLogic.Interfaces;
 
 namespace DelfiFeeds.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ILoginLogic _loginLogic;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ILoginLogic loginLogic)
         {
             _logger = logger;
+            _loginLogic = loginLogic;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public async Task<IActionResult> Login(string token, string userID)
+        {
+            await _loginLogic.RegisterUser(token, userID, HttpContext);
+            return Redirect("Feeds");
+        }
+
+        [HttpGet]
+        public IActionResult Feeds()
         {
             return View();
         }

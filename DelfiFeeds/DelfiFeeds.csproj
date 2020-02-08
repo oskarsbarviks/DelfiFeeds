@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FrontendLogic\FrontendLogic.csproj" />
     <ProjectReference Include="..\HostedServices\HostedServices.csproj" />
   </ItemGroup>
 

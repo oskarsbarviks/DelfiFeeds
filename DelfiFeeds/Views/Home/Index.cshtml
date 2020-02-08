@@ -1,8 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '192092798659855',
+            cookie: true,                     // Enable cookies to allow the server to access the session.
+            xfbml: true,                     // Parse social plugins on this webpage.
+            version: 'v6.0'           // Use this Graph API version for this call.
+        });
+    };
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    function LogInFacebook() {
+        FB.login(function (response) {
+            if (response.authResponse) {
+                window.location.href = "Home/Login?token=" + response.authResponse.accessToken + "&userID=" + response.authResponse.userID;
+            } 
+            else {
+                alert("Did not logged in, please try again");
+            }
+        });
+    }
+
+    (function (d, s, id) {                      // Load the SDK asynchronously
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<h3>Press login button to login  via Facebook</h3>
+<button onclick="LogInFacebook()">Login</button>
