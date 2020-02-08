@@ -1,0 +1,11 @@
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\bin\Debug\netcoreapp3.1\Repositories.deps.json
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\bin\Debug\netcoreapp3.1\Repositories.dll
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\obj\Debug\netcoreapp3.1\Repositories.csprojAssemblyReference.cache
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\obj\Debug\netcoreapp3.1\Repositories.AssemblyInfoInputs.cache
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\obj\Debug\netcoreapp3.1\Repositories.AssemblyInfo.cs
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\bin\Debug\netcoreapp3.1\Repositories.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\obj\Debug\netcoreapp3.1\Repositories.dll
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\obj\Debug\netcoreapp3.1\Repositories.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\bin\Debug\netcoreapp3.1\Shared.dll
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\bin\Debug\netcoreapp3.1\Shared.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\Repositories\obj\Debug\netcoreapp3.1\Repositories.csproj.CopyComplete

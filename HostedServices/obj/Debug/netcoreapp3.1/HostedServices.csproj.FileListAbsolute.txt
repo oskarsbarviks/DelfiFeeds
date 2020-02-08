@@ -1,0 +1,13 @@
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\bin\Debug\netcoreapp3.1\HostedServices.deps.json
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\bin\Debug\netcoreapp3.1\HostedServices.dll
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\obj\Debug\netcoreapp3.1\HostedServices.csprojAssemblyReference.cache
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\obj\Debug\netcoreapp3.1\HostedServices.AssemblyInfoInputs.cache
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\obj\Debug\netcoreapp3.1\HostedServices.AssemblyInfo.cs
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\bin\Debug\netcoreapp3.1\HostedServices.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\bin\Debug\netcoreapp3.1\Shared.dll
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\bin\Debug\netcoreapp3.1\Shared.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\obj\Debug\netcoreapp3.1\HostedServices.csproj.CopyComplete
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\obj\Debug\netcoreapp3.1\HostedServices.dll
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\obj\Debug\netcoreapp3.1\HostedServices.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\bin\Debug\netcoreapp3.1\Repositories.dll
+C:\Users\oskar\source\repos\DelfiFeeds\HostedServices\bin\Debug\netcoreapp3.1\Repositories.pdb
