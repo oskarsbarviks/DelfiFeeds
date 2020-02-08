@@ -1,0 +1,15 @@
+﻿@using Repositories.DataObject
+@model List<DelfiFeedDataObject>
+
+<h3>Feed List</h3>
+@foreach (var feed in Model)
+{
+    <div>
+        <p>Title: @feed.Title</p>
+        <a href="@feed.Link">Link</a><br>
+        <img src="@feed.PictureUrl.AbsoluteUri">
+        <p>Publich date: @feed.PublishDate.ToShortDateString()</p>
+        <p>Description: @feed.Description</p>
+        <p>Comments: @feed.CommentCount</p>
+    </div>
+}
