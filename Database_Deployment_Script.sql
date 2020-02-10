@@ -39,6 +39,74 @@ Values
 (
 'Auto', null
 )
+,
+(
+'Bizness', null
+)
+,
+(
+'Calis', null
+)
+,
+(
+'Delfi', null
+)
+,
+(
+'Izklaide', null
+)
+,
+(
+'Kultura', null
+)
+,
+(
+'Laikazinas', null
+)
+,
+(
+'Majadarzs', null
+)
+,
+(
+'Mansdraugs', null
+)
+,
+(
+'Orakuls', null
+)
+,
+(
+'Receptes', null
+)
+,
+(
+'Skats', null
+)
+,
+(
+'Sports', null
+)
+,
+(
+'Tasty', null
+)
+,
+(
+'Tavamaja', null
+)
+,
+(
+'Turismagids', null
+)
+,
+(
+'Tv', null
+)
+,
+(
+'vina', null
+)
 
 -- UsersTable
 CREATE TABLE Users
