@@ -135,4 +135,4 @@ C:\Users\oskar\source\repos\DelfiFeeds\DelfiFeeds\bin\Debug\netcoreapp3.1\Micros
 C:\Users\oskar\source\repos\DelfiFeeds\DelfiFeeds\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\oskar\source\repos\DelfiFeeds\DelfiFeeds\obj\Debug\netcoreapp3.1\DelfiFeeds.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\oskar\source\repos\DelfiFeeds\DelfiFeeds\obj\Debug\netcoreapp3.1\Razor\Views\Home\Feeds.cshtml.g.cs
-C:\Users\oskar\source\repos\DelfiFeeds\DelfiFeeds\obj\Debug\netcoreapp3.1\Razor\Views\Home\FeedsPartial.cshtml.g.cs
+C:\Users\oskar\source\repos\DelfiFeeds\DelfiFeeds\obj\Debug\netcoreapp3.1\Razor\Views\Home\Profile.cshtml.g.cs

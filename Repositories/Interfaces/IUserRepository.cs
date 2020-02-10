@@ -7,5 +7,6 @@ namespace Repositories.Interfaces
     {
         Task<UserDataObject> GetUserByID(string userID);
         Task CreateOrUpdateUser(string userID, string email, string fullName, byte[] picture);
+        Task UpdateUserProfileData(string userID, string email, string fullName, string category, int feedCount);
     }
 }

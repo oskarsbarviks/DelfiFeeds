@@ -36,7 +36,7 @@ namespace DelfiFeeds
                                       .AddCookie(options =>
                                       {
                                           options.Cookie.Name = "CatchSmartCookie";
-                                          options.LoginPath = "/Home/Login";
+                                          options.LoginPath = "/";
                                       });
 
             services.AddTransient<IDelfiFeedService, DelfiFeedService>();
@@ -48,8 +48,11 @@ namespace DelfiFeeds
             services.AddScoped<IFacebookClient, FacebookClient>();
             services.AddScoped<ILoginLogic, LoginLogic>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserProfileRepository, UserProfileRepository>();
+            services.AddScoped<IProfileLogic, ProfileLogic>();
+            services.AddScoped<IClaimsLogic, ClaimsLogic>();
             // Add service which will run in background and update delfi rss feeds
-            // services.AddHostedService<DelfiFeedHostedService>();
+             services.AddHostedService<DelfiFeedHostedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

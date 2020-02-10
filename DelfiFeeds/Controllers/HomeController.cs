@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using DelfiFeeds.Models;
 using Microsoft.AspNetCore.Authorization;
 using FrontendLogic.Interfaces;
 using Repositories.Interfaces;
-using System.Security.Claims;
+using FrontendLogic.DTO;
+using FrontendLogic;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace DelfiFeeds.Controllers
 {
@@ -17,16 +16,36 @@ namespace DelfiFeeds.Controllers
     {
         private readonly ILoginLogic _loginLogic;
         private readonly IFeedRepository _feedRepoistory;
-        public HomeController(ILoginLogic loginLogic, IFeedRepository feedRepoistory)
+        private readonly IProfileLogic _profileLogic;
+        private readonly IClaimsLogic _claimsLogic;
+        private readonly IUserRepository _userRepository;
+        public HomeController
+            (
+            ILoginLogic loginLogic,
+            IFeedRepository feedRepoistory,
+            IProfileLogic profileLogic,
+            IClaimsLogic claimsLogic,
+            IUserRepository userRepository
+            )
         {
             _loginLogic = loginLogic;
             _feedRepoistory = feedRepoistory;
+            _profileLogic = profileLogic;
+            _claimsLogic = claimsLogic;
+            _userRepository = userRepository;
         }
 
         [HttpGet]
         public IActionResult Index()
-        { 
-            return View();
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return Redirect("Home/Feeds");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -40,17 +59,39 @@ namespace DelfiFeeds.Controllers
         [Authorize]
         public async Task<IActionResult> Feeds()
         {
-            var userID = User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier).Value;
-            var model = await _feedRepoistory.GetFeedsByUserID(userID, "Aculiecinieks", 12);          
-            return View(model);
+            var userID = _claimsLogic.GetUserIdFromClaims(User.Claims);
+            return View(await _feedRepoistory.GetFeedsByUserID(userID, ProfileSettingsConstants.DefaultCategory, ProfileSettingsConstants.DefaultFeedCount));
         }
 
         [HttpGet]
         [Authorize]
-        public async Task<IActionResult> FeedsPartial()
+        public async Task<IActionResult> Profile()
         {
-            var userID = User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier).Value;
-            return PartialView(await _feedRepoistory.GetFeedsByUserID(userID, "Aculiecinieks", 12));
+            var userID = _claimsLogic.GetUserIdFromClaims(User.Claims);
+            return View(await _profileLogic.GetProfileDataByID(userID));
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Profile(ProfileModel profile)
+        {
+            var userID = _claimsLogic.GetUserIdFromClaims(User.Claims);
+            await _userRepository.UpdateUserProfileData(
+                                                        userID,
+                                                        profile.Email,
+                                                        profile.FullName,
+                                                        profile.Category,
+                                                        profile.FeedsCount
+                                                        );
+            return View(await _profileLogic.GetProfileDataByID(userID));
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return Redirect("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

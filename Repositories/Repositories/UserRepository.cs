@@ -39,15 +39,18 @@ namespace Repositories.Repositories
                     if (reader.HasRows)
                     {
                         await reader.ReadAsync();
-                        return new UserDataObject
+                        var userDataObject = new UserDataObject
                         {
                             UserID = reader.GetString(reader.GetOrdinal(UserTableColumNameConstants.UserID)),
                             Email = reader.GetString(reader.GetOrdinal(UserTableColumNameConstants.Email)),
                             FullName = reader.GetString(reader.GetOrdinal(UserTableColumNameConstants.FullName))
                         };
+                        await reader.CloseAsync();
+                        return userDataObject;
                     }
                     else
                     {
+                        await reader.CloseAsync();
                         return null;
                     }
                 }
@@ -70,6 +73,28 @@ namespace Repositories.Repositories
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@FullName", fullName);
                     cmd.Parameters.AddWithValue("@Picture", picture);
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Uupdates user. Add feeds settings in FeedsSettings table
+        /// </summary>
+        public async Task UpdateUserProfileData(string userID, string email, string fullName, string category, int feedCount)
+        {
+            var connectionString = _config.GetSection(ConfigFileConstants.DatabaseConnectionString).Value;
+            using (var connection = new SqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
+                using (var cmd = new SqlCommand(ProcedureNameConstants.UpdateUserAndProfileData, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserID", userID);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@FullName", fullName);
+                    cmd.Parameters.AddWithValue("@Category", category);
+                    cmd.Parameters.AddWithValue("@FeedCount", feedCount);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }

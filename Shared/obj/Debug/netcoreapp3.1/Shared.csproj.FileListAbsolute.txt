@@ -5,3 +5,4 @@ C:\Users\oskar\source\repos\DelfiFeeds\Shared\obj\Debug\netcoreapp3.1\Shared.Ass
 C:\Users\oskar\source\repos\DelfiFeeds\Shared\obj\Debug\netcoreapp3.1\Shared.AssemblyInfo.cs
 C:\Users\oskar\source\repos\DelfiFeeds\Shared\obj\Debug\netcoreapp3.1\Shared.dll
 C:\Users\oskar\source\repos\DelfiFeeds\Shared\obj\Debug\netcoreapp3.1\Shared.pdb
+C:\Users\oskar\source\repos\DelfiFeeds\Shared\obj\Debug\netcoreapp3.1\Shared.csprojAssemblyReference.cache

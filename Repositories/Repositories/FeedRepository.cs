@@ -83,10 +83,12 @@ namespace Repositories.Repositories
                         });
                     }
 
+                    await reader.CloseAsync();
                     return feedList;
                 }
                 else
                 {
+                    await reader.CloseAsync();
                     return new List<DelfiFeedDataObject>();
                 }
             }
@@ -103,12 +105,15 @@ namespace Repositories.Repositories
                 if (reader.HasRows)
                 {
                     await reader.ReadAsync();
-                    return new FeedSettingsDataObject
+                    var feedDataObject = new FeedSettingsDataObject
                     {
                         UserID = reader.GetString(reader.GetOrdinal(FeedsSettingsTableColumnConstants.UserID)),
                         Category = reader.GetString(reader.GetOrdinal(FeedsSettingsTableColumnConstants.Category)),
                         FeedCount = reader.GetInt32(reader.GetOrdinal(FeedsSettingsTableColumnConstants.FeedCount))
                     };
+
+                    await reader.CloseAsync();
+                    return feedDataObject;
                 }
                 else
                 {

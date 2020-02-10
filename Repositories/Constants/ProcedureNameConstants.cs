@@ -11,5 +11,7 @@
         public static readonly string CreateOrUpdateUser = "dbo.Sp_CreateOrUpdateUser";
         public static readonly string GetFeedSettingsByUserID = "dbo.Sp_GetFeedSettingsByUserID";
         public static readonly string GetFeedsByCategory = "dbo.Sp_GetFeedsByCategory";
+        public static readonly string GetUserProfileData = "dbo.Sp_GetUserProfileData";
+        public static readonly string UpdateUserAndProfileData = "dbo.Sp_UpdateUserAndProfileData";
     }
 }
